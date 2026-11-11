@@ -8,8 +8,8 @@ chez Cloudflare, avec un **compte pseudonyme** : un identifiant aléatoire, sans
 téléphone. Une version de l'app sans service Vulkia (par exemple la version web de test) n'envoie rien.
 
 ## Responsable du traitement
-Le responsable du traitement des données décrites ici est l'éditeur de Vulkia : **NexForg3**, entreprise
-individuelle (micro-entreprise), joignable à **NexForg3@gmail.com**.
+Le responsable du traitement des données décrites ici est l'éditeur de Vulkia : **NexForg3**, société par actions
+simplifiée unipersonnelle (SASU) en cours d'immatriculation, joignable à **NexForg3@gmail.com**.
 
 ## Données stockées sur ton téléphone
 Toutes tes données (séances, routines, salles de sport, mensurations, exercices personnalisés, réglages,
@@ -217,8 +217,8 @@ l'application.
 
 The French version above prevails.
 
-**Controller.** The controller of the data described here is the publisher of Vulkia: **NexForg3**, sole
-proprietorship (French micro-entreprise), reachable at **NexForg3@gmail.com**.
+**Controller.** The controller of the data described here is the publisher of Vulkia: **NexForg3**, a French
+simplified joint-stock company (SASU) being registered, reachable at **NexForg3@gmail.com**.
 
 **On your device.** Your training log works **without an account**: workouts, routines, gyms, measurements, custom
 exercises, settings and coach conversations are stored **only on your device**; export or delete them anytime from
