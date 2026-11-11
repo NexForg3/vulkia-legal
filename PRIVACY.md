@@ -188,6 +188,14 @@ Ces données ne sont utilisées que pour ces fonctionnalités, restent sur l'app
 partagées, ni utilisées à des fins publicitaires. Tu peux retirer l'autorisation à tout moment dans Health Connect
 ou Apple Santé.
 
+## Vidéos de démonstration (YouTube)
+Quand tu touches **Vidéo** sur un exercice, l'app ouvre le lecteur YouTube **dans l'app**, depuis le domaine à
+confidentialité renforcée `youtube-nocookie.com`. Google (YouTube) reçoit alors ton adresse IP et des informations
+techniques sur ton appareil, et peut enregistrer des données sur ton téléphone pendant la lecture, sous sa propre
+responsabilité ([règles de confidentialité de Google](https://policies.google.com/privacy)). La vidéo peut contenir des
+publicités ajoutées par YouTube. Vulkia ne lui transmet ni ton compte, ni tes séances, et rien n'est chargé tant que tu
+n'ouvres pas une vidéo.
+
 ## Ce que Vulkia ne fait pas
 Aucune publicité, aucun traceur publicitaire, aucune revente de données. Aucun e-mail ni nom demandé. Les
 statistiques d'usage sont des totaux sans identifiant.
@@ -288,6 +296,11 @@ responsibility. **Transfers outside the EU** to these processors rely on the GDP
 under the EU-U.S. Data Privacy Framework and its data processing addendum also includes the European Commission's
 standard contractual clauses; RevenueCat's data processing addendum relies on those standard contractual clauses. A
 copy is available from the publisher.
+
+**Demonstration videos (YouTube).** Tapping **Video** on an exercise plays it in the app from YouTube's
+privacy-enhanced domain (`youtube-nocookie.com`): Google receives your IP address and technical device information and
+may store data on your phone during playback, under its own privacy policy; the video may contain ads added by YouTube.
+Vulkia sends it neither your account nor your workouts, and nothing loads until you open a video.
 
 **Health Connect / Apple Health.** With your explicit permission (each data type can be refused separately), Vulkia
 writes workouts (type, duration), estimated active calories and the weigh-ins you enter (weight, body fat, lean mass)
