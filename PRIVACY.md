@@ -1,11 +1,13 @@
 # Politique de confidentialité — Vulkia
 
-*Dernière mise à jour : 11 novembre 2026*
+*Dernière mise à jour : 12 novembre 2026*
 
 Vulkia est une application de suivi de musculation. Ton carnet d'entraînement fonctionne **sans compte** : tes données
 restent sur ton téléphone. Le coach IA et l'abonnement **Vulkia Premium** passent par le **service Vulkia**, hébergé
 chez Cloudflare, avec un **compte pseudonyme** : un identifiant aléatoire, sans nom, sans e-mail, sans numéro de
-téléphone. Une version de l'app sans service Vulkia (par exemple la version web de test) n'envoie rien.
+téléphone. Pour **t'abonner**, tu relies ce compte à ton **compte Google** ou à ton **adresse e-mail** (voir *Compte
+Vulkia avec e-mail ou Google*). Une version de l'app sans service Vulkia (par exemple la version web de test) n'envoie
+rien.
 
 ## Responsable du traitement
 Le responsable du traitement des données décrites ici est l'éditeur de Vulkia : **NexForg3**, société par actions
@@ -35,6 +37,22 @@ garde cet identifiant, celui de l'installation, la plateforme (Android, iOS), le
 visite et, si tu as restauré ton abonnement sur un autre appareil, le lien entre les comptes qui le partagent. **Ton
 adresse IP n'est pas enregistrée** : seule une empreinte chiffrée, gardée 2 jours, sert à limiter le nombre de comptes
 créés depuis un même réseau.
+
+## Compte Vulkia avec e-mail ou Google
+Un abonnement demande un **compte Vulkia relié à ton compte Google ou à ton e-mail** : tu retrouves ainsi ton
+abonnement et ton quota du coach IA sur un autre téléphone. C'est facultatif pour tout le reste de l'app.
+- **Avec ton e-mail** : le serveur garde ton adresse e-mail et une **empreinte de ton mot de passe** (PBKDF2-SHA256,
+  avec un sel aléatoire) — jamais le mot de passe lui-même. Aucun e-mail ne t'est envoyé.
+- **Avec Google** (« Continuer avec Google », Android) : Google confirme ton identité à Vulkia et lui transmet
+  l'**identifiant de ton compte Google**, ton **adresse e-mail** et le fait qu'il l'a vérifiée. Vulkia ne reçoit ni ton
+  mot de passe Google, ni tes contacts, ni rien d'autre de ton compte Google.
+
+Le serveur garde aussi les dates de création et de dernière connexion. Pour bloquer les essais de mots de passe, il
+compte les **échecs de connexion** par heure, sous une empreinte chiffrée de l'adresse essayée et du réseau (ni
+l'adresse ni l'adresse IP en clair), effacée au bout d'un à deux jours. Se déconnecter laisse le compte intact ; ton
+téléphone reprend alors un compte pseudonyme, avec les mêmes compteurs d'utilisation du coach IA. Supprimer tes données
+du serveur efface aussi tes identifiants de connexion. L'éditeur peut offrir l'accès Premium à certains comptes
+(éditeur, testeurs) d'après leur adresse e-mail vérifiée par Google ou leur identifiant de compte.
 
 ## Coach IA
 Quand tu utilises le coach IA (création de séance ou de programme, discussion), l'app envoie au service Vulkia ta
@@ -73,8 +91,8 @@ cache 60 jours **sans ces identifiants**, pour être resservie à quelqu'un qui 
 atteint, le conseil est calculé sur ton téléphone et rien n'est envoyé.
 
 ## Abonnement Vulkia Premium
-Les achats se font dans **Google Play** ou l'**App Store** : Vulkia ne voit jamais ton moyen de paiement, ton nom ni
-ton e-mail. Pour gérer les abonnements, l'app utilise le service **RevenueCat**, qui traite l'historique de tes achats
+Les achats se font dans **Google Play** ou l'**App Store** : la boutique ne transmet jamais à Vulkia ton moyen de
+paiement, ton nom ni ton e-mail. Pour gérer les abonnements, l'app utilise le service **RevenueCat**, qui traite l'historique de tes achats
 dans l'app transmis par la boutique et le relie à l'identifiant de ton compte Vulkia
 ([politique de confidentialité de RevenueCat](https://www.revenuecat.com/privacy)). RevenueCat informe le service
 Vulkia de chaque changement. Le serveur Vulkia garde l'**état de ton abonnement** (produit, boutique, période d'essai
@@ -99,7 +117,7 @@ d'événements acceptés par jour (compteur gardé 8 jours).
 
 ## Supprimer tes données du serveur
 *Réglages → Abonnement → Supprimer mes données du serveur* efface du serveur ton compte (ses identifiants, la
-plateforme, les dates), l'état de ton abonnement enregistré par Vulkia et le journal technique de tes demandes
+plateforme, les dates, ton adresse e-mail, l'identifiant Google et l'empreinte du mot de passe s'il y en a), l'état de ton abonnement enregistré par Vulkia et le journal technique de tes demandes
 terminées : celles faites avec ce compte (y compris celles comptées sur le compte que partagent tes appareils) et
 celles faites par ton installation sans compte. **Cela ne résilie pas ton abonnement** : gère-le dans Google Play ou
 l'App Store ; s'il est en cours, l'app le rattache à ton nouveau compte.
@@ -135,6 +153,7 @@ supprime-les d'abord depuis l'app.
 | Donnée | Durée |
 |---|---|
 | Compte (identifiants aléatoires, plateforme, dates, lien avec les comptes qui partagent ton abonnement) | jusqu'à ce que tu le supprimes depuis l'app |
+| Identifiants de connexion (adresse e-mail, identifiant Google, empreinte du mot de passe, dates) | jusqu'à ce que tu supprimes ton compte depuis l'app |
 | État de ton abonnement | jusqu'à la suppression |
 | Trace du compte supprimé d'un appareil qui détenait un abonnement partagé (identifiant opaque, dates de création et de suppression, lien avec le groupe, état de l'abonnement) | jusqu'à 30 jours après la fin de cet abonnement |
 | Compteurs du jour (coach, conseil, statistiques) | 8 jours |
@@ -143,6 +162,7 @@ supprime-les d'abord depuis l'app.
 | Journal technique des demandes à l'IA (sans texte) | 35 jours |
 | Copie d'une séance ou d'un programme générés | servie 15 minutes, puis effacée (au plus tard au nettoyage quotidien) |
 | Empreinte d'adresse IP (création de comptes) | 2 jours |
+| Compteurs d'échecs de connexion (empreintes de l'adresse essayée et du réseau) | 1 à 2 jours |
 | Journal des notifications d'abonnement | 90 jours |
 | Compteurs quotidiens du conseil de remplacement | 7 jours |
 | Réponses du conseil en cache (sans identifiant) | 60 jours |
@@ -152,9 +172,9 @@ supprime-les d'abord depuis l'app.
 
 | Traitement | Base légale |
 |---|---|
-| Compte, offre et quotas, coach IA et conseil de remplacement à ta demande, abonnement (état vérifié, RevenueCat, appareils qui le partagent, trace gardée pour eux après une suppression) | exécution du contrat : les conditions d'utilisation et d'abonnement (article 6.1.b du RGPD) |
+| Compte (et sa connexion par e-mail ou Google), offre et quotas, coach IA et conseil de remplacement à ta demande, abonnement (état vérifié, RevenueCat, appareils qui le partagent, trace gardée pour eux après une suppression) | exécution du contrat : les conditions d'utilisation et d'abonnement (article 6.1.b du RGPD) |
 | Informations de santé jointes à une demande (résumé des blessures et maladies, douleurs indiquées, niveau de douleur) | ton consentement explicite (article 9.2.a du RGPD), demandé dans l'app avant le premier envoi et retirable à tout moment dans *Réglages → Données → Confidentialité* ; le retrait vaut pour les demandes suivantes |
-| Limites contre les abus (empreinte d'adresse IP, quotas par installation, compteurs gardés après une suppression) et sécurité du service (signatures, journal technique) | intérêt légitime de l'éditeur : protéger le service, son budget et l'offre gratuite contre le contournement des limites (article 6.1.f) |
+| Limites contre les abus (empreinte d'adresse IP, compteurs d'échecs de connexion, quotas par installation, compteurs gardés après une suppression) et sécurité du service (signatures, journal technique) | intérêt légitime de l'éditeur : protéger le service, son budget et l'offre gratuite contre le contournement des limites (article 6.1.f) |
 | Statistiques d'usage (totaux sans identifiant) | intérêt légitime de l'éditeur : savoir si l'offre intéresse et l'améliorer (article 6.1.f) |
 | Health Connect / Apple Santé | ton consentement, donné et retiré dans les autorisations du système |
 
@@ -165,6 +185,7 @@ supprime-les d'abord depuis l'app.
 | Cloudflare, Inc. (Workers, D1, Workers AI) | héberge le service Vulkia et exécute les modèles d'IA | demandes au coach et au conseil, compte, compteurs, journal technique | États-Unis (réseau mondial) |
 | RevenueCat, Inc. | gestion des abonnements | identifiant du compte, historique des achats dans l'app | États-Unis |
 | Google Play, Apple App Store | paiement et facturation, sous leur propre responsabilité | selon leurs propres politiques (ton compte Google ou Apple) | — |
+| Google (connexion avec Google, si tu la choisis) | confirme ton identité, sous sa propre responsabilité ([règles de confidentialité de Google](https://policies.google.com/privacy)) | il transmet à Vulkia l'identifiant de ton compte Google et ton adresse e-mail | — |
 
 Si d'autres prestataires d'IA étaient utilisés, cette politique serait mise à jour avant.
 
@@ -197,8 +218,9 @@ publicités ajoutées par YouTube. Vulkia ne lui transmet ni ton compte, ni tes 
 n'ouvres pas une vidéo.
 
 ## Ce que Vulkia ne fait pas
-Aucune publicité, aucun traceur publicitaire, aucune revente de données. Aucun e-mail ni nom demandé. Les
-statistiques d'usage sont des totaux sans identifiant.
+Aucune publicité, aucun traceur publicitaire, aucune revente de données. Aucun nom demandé ; ton e-mail seulement si
+tu crées un compte pour t'abonner, et jamais pour de la prospection. Les statistiques d'usage sont des totaux sans
+identifiant.
 
 ## Notifications
 Les notifications (fin du temps de repos, séance IA prête) sont locales et générées par l'application.
@@ -210,8 +232,8 @@ consentement donné (le partage de ta santé avec le coach IA dans *Réglages �
 autorisations Health Connect / Apple Santé) et définir des directives sur le sort
 de tes données après ton décès. L'essentiel se fait depuis l'app : exporter ou effacer les données du téléphone
 (*Réglages → Données*), supprimer tes données du serveur (*Réglages → Abonnement*). Pour toute autre demande, contacte
-l'éditeur (voir *Contact*) : comme Vulkia ne connaît ni ton nom ni ton e-mail, le serveur ne peut retrouver tes
-données qu'à partir de ton appareil : l'éditeur te répond dans un délai d'un mois et t'indique comment relier ta
+l'éditeur (voir *Contact*) : sans compte relié à ton e-mail ou à Google, Vulkia ne connaît ni ton nom ni ton e-mail et
+le serveur ne peut retrouver tes données qu'à partir de ton appareil ; l'éditeur te répond dans un délai d'un mois et t'indique comment relier ta
 demande à ton compte, sans te demander plus que nécessaire. Tu peux aussi adresser une réclamation à la CNIL (www.cnil.fr) ou à l'autorité de
 protection des données de ton pays.
 
@@ -242,6 +264,18 @@ data. The server keeps them, the platform, the creation and last-seen dates and,
 on another device, the link between the accounts that share it. Your IP address is not stored, only a keyed hash kept
 2 days to limit account creation.
 
+**Vulkia account with email or Google.** A subscription needs a **Vulkia account linked to your Google account or to
+your email address**, so you find your subscription and AI quota again on another phone (optional for everything
+else). With your email, the server keeps your address and a **hash of your password** (PBKDF2-SHA256, random salt),
+never the password itself; no email is sent to you. With Google ("Continue with Google", Android), Google confirms your
+identity and gives Vulkia your **Google account id**, your **email address** and whether it verified it — nothing else
+from your Google account. The server also keeps the creation and last sign-in dates, and counts **failed sign-ins** per
+hour under keyed hashes of the address tried and of the network (1 to 2 days). Signing out keeps the account; your
+phone goes back to a pseudonymous account with the same AI usage counters. Deleting your data from the server also
+erases your sign-in details (until then they are kept). The publisher may give Premium to some accounts (publisher,
+testers) from their Google-verified email address or account id. Legal basis: performance of the contract (failed
+sign-in counters: legitimate interest, abuse prevention). Google acts under its own privacy policy.
+
 **AI coach and replacement advice.** The AI coach sends your request and the needed context (training profile, workout
 summary, gym equipment; never your name) with your account; Workers AI neither stores nor trains on it. **Your health
 information is only sent with your explicit consent**: a summary of the injuries and illnesses you declared (without
@@ -259,8 +293,8 @@ app already has it, are used for the request and cost limits (daily counters 7 d
 without text 35 days); answers are cached 60 days without them. Offline or over the daily limit, the advice is
 computed on the phone and nothing is sent.
 
-**Subscription.** Purchases are made in **Google Play** or the **App Store**: Vulkia never sees your payment method,
-name or email. **RevenueCat** processes your in-app purchase history and links it to your Vulkia account id; the Vulkia
+**Subscription.** Purchases are made in **Google Play** or the **App Store**: the store never gives Vulkia your payment
+method, name or email. **RevenueCat** processes your in-app purchase history and links it to your Vulkia account id; the Vulkia
 server keeps the state of your subscription (product, store, trial, test or real purchase, dates, renewal, grace
 period) until deletion and a log of the store notifications (event id and type, account id, dates) for 90 days. Your
 plan is derived from this verified state, never from your phone. "Restore purchases" attaches your subscription to the
@@ -312,8 +346,8 @@ trackers, no sale of data.
 **Your rights.** You have the right of access, rectification, erasure, restriction of processing, data portability
 and objection to processing based on legitimate interest; you can withdraw a consent at any time and set directives
 on what happens to your data after your death. Most of it is done in the app (*Settings → Data*, *Settings →
-Subscription*); for anything else, contact the publisher: since Vulkia knows neither your name nor your email, the
-server can only find your data from your device: the publisher answers within one month and tells you how to link
+Subscription*); for anything else, contact the publisher: without an account linked to your email or Google, Vulkia
+knows neither your name nor your email and the server can only find your data from your device; the publisher answers within one month and tells you how to link
 your request to your account, without asking for more than needed. You can lodge a complaint with the CNIL (www.cnil.fr) or with the data protection authority
 of your country.
 
