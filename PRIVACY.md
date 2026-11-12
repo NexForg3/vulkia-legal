@@ -67,11 +67,13 @@ personne qui volerait la base de données ne peut lire ces données ; le serveur
 nombre, leur taille et leurs dates d'envoi, rattachés à ton compte. Sans ton code, l'éditeur ne peut donc pas les
 récupérer pour toi.
 
-Activer la synchronisation est ton choix explicite, y compris pour tes informations de santé (blessures, maladies,
-photos) : base légale, ton consentement explicite (article 9.2.a du RGPD) et l'exécution du service demandé. Tu le
-retires à tout moment : *Arrêter sur ce téléphone* cesse les envois de ce téléphone, *Réinitialiser la
-synchronisation* efface les données chiffrées du serveur (et *Supprimer mes données du serveur* les efface avec ton
-compte).
+La synchronisation fait partie du compte Vulkia : elle s'active d'elle-même quand tu crées ton compte ou t'y
+connectes, ce que l'écran de création du compte annonce avant que tu le fasses. Créer ou connecter ce compte est donc
+ton choix explicite, y compris pour tes informations de santé (blessures, maladies, photos) : base légale, ton
+consentement explicite (article 9.2.a du RGPD) et l'exécution du service demandé. Tu le retires à tout moment : la
+déconnexion du compte cesse les envois de ce téléphone, et *Supprimer mes données du serveur* efface les données
+chiffrées avec ton compte. *Réinitialiser la synchronisation* (code perdu) efface les données chiffrées du serveur
+puis repart de ce téléphone avec un nouveau code.
 
 ## Coach IA
 Quand tu utilises le coach IA (création de séance ou de programme, discussion), l'app envoie au service Vulkia ta
