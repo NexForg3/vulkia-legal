@@ -216,7 +216,7 @@ supprime-les d'abord depuis l'app.
 | Cloudflare, Inc. (Workers, D1, R2, Workers AI) | héberge le service Vulkia et exécute les modèles d'IA | demandes au coach et au conseil, compte, compteurs, journal technique ; données synchronisées, chiffrées (illisibles pour lui sans la clé secrète du service) | États-Unis (réseau mondial) |
 | RevenueCat, Inc. | gestion des abonnements | identifiant du compte, historique des achats dans l'app | États-Unis |
 | Google Play, Apple App Store | paiement et facturation, sous leur propre responsabilité | selon leurs propres politiques (ton compte Google ou Apple) | — |
-| Service d'envoi d'e-mails choisi par l'éditeur (Brevo SAS, France, ou Resend, Inc., États-Unis) | envoie les codes de réinitialisation et de validation | ton adresse e-mail et le code envoyé | Union européenne (Brevo) ou États-Unis (Resend) |
+| Service d'envoi d'e-mails choisi par l'éditeur : Gmail (Google LLC, depuis le compte Gmail de l'éditeur), Brevo SAS ou Resend, Inc. | envoie les codes de réinitialisation et de validation | ton adresse e-mail et le code envoyé | États-Unis (Google, Resend) ou Union européenne (Brevo) |
 | Google (connexion avec Google, si tu la choisis) | confirme ton identité, sous sa propre responsabilité ([règles de confidentialité de Google](https://policies.google.com/privacy)) | il transmet à Vulkia l'identifiant de ton compte Google et ton adresse e-mail | — |
 
 Si d'autres prestataires d'IA étaient utilisés, cette politique serait mise à jour avant.
