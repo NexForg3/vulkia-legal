@@ -1,6 +1,6 @@
 # Politique de confidentialité — Vulkia
 
-*Dernière mise à jour : 12 novembre 2026 (synchronisation chiffrée)*
+*Dernière mise à jour : 12 novembre 2026 (synchronisation chiffrée liée au compte)*
 
 Vulkia est une application de suivi de musculation. Ton carnet d'entraînement fonctionne **sans compte** : tes données
 restent sur ton téléphone. Le coach IA et l'abonnement **Vulkia Premium** passent par le **service Vulkia**, hébergé
@@ -15,8 +15,8 @@ simplifiée unipersonnelle (SASU) en cours d'immatriculation, joignable à **Nex
 
 ## Données stockées sur ton téléphone
 Toutes tes données (séances, routines, salles de sport, mensurations, exercices personnalisés, réglages,
-conversations avec le coach) sont enregistrées **sur ton téléphone**, et nulle part ailleurs tant que tu n'actives pas
-la *Synchronisation chiffrée* (voir plus bas). Tu peux les exporter (*Réglages →
+conversations avec le coach) sont enregistrées **sur ton téléphone**, et nulle part ailleurs tant que tu n'as pas de
+compte Vulkia (avec un compte, elles passent par la *Synchronisation chiffrée*, voir plus bas). Tu peux les exporter (*Réglages →
 Données → Exporter une sauvegarde*) et les supprimer à tout moment (*Réglages → Données → Effacer toutes les données*,
 ou en désinstallant l'application). L'app y garde aussi le jeton de ton compte Vulkia (dans le stockage sécurisé du
 téléphone) et le dernier état connu de ton abonnement et de tes quotas, pour l'affichage.
@@ -25,8 +25,8 @@ téléphone) et le dernier état connu de ton abonnement et de tes quotas, pour 
 Les blessures et maladies que tu déclares (zone, type, douleurs, symptômes, température, notes) servent uniquement à
 adapter tes séances sur l'appareil. Elles **restent sur ton téléphone** : elles ne sont envoyées ni à Health Connect /
 Apple Santé ni, en clair, à aucun serveur, et ne sont incluses que dans tes propres sauvegardes (export manuel, ou
-sauvegarde automatique dans le dossier que tu as choisi) et, si tu l'actives, dans la *Synchronisation chiffrée*, où
-personne d'autre que toi ne peut les lire. Un résumé sans tes notes n'accompagne tes demandes au coach IA
+sauvegarde automatique dans le dossier que tu as choisi) et, avec un compte Vulkia, dans la *Synchronisation chiffrée*,
+où elles ne sont stockées que chiffrées. Un résumé sans tes notes n'accompagne tes demandes au coach IA
 **qu'avec ton accord explicite** (voir *Coach IA* ci-dessous). Vulkia adapte ton entraînement, il ne remplace pas un
 avis médical.
 
@@ -56,24 +56,26 @@ téléphone reprend alors un compte pseudonyme, avec les mêmes compteurs d'util
 du serveur efface aussi tes identifiants de connexion. L'éditeur peut offrir l'accès Premium à certains comptes
 (éditeur, testeurs) d'après leur adresse e-mail vérifiée par Google ou leur identifiant de compte.
 
-## Synchronisation chiffrée (facultative)
-Si tu l'actives (*Réglages → Synchronisation chiffrée*, avec un compte Vulkia relié à Google ou à ton e-mail), tes
-séances, routines et dossiers, salles, mensurations, exercices personnalisés, conversations avec le coach, blessures et
-maladies (avec leurs notes), photos de progression (images comprises) et réglages sont **chiffrés sur ton téléphone**
-(XChaCha20-Poly1305, clé aléatoire de 256 bits) avant d'être envoyés au service Vulkia, qui les stocke chez Cloudflare
-(D1 et R2) pour tes autres téléphones. C'est un chiffrement **de bout en bout** : la clé ne quitte tes téléphones
-qu'enveloppée par ton **code de récupération**, que Vulkia ne reçoit jamais. Ni l'éditeur, ni Cloudflare, ni une
-personne qui volerait la base de données ne peut lire ces données ; le serveur ne voit que des blocs chiffrés, leur
-nombre, leur taille et leurs dates d'envoi, rattachés à ton compte. Sans ton code, l'éditeur ne peut donc pas les
-récupérer pour toi.
+## Synchronisation chiffrée (avec un compte)
+Avec un compte Vulkia relié à Google ou à ton e-mail, tes séances, routines et dossiers, salles, mensurations, exercices
+personnalisés, conversations avec le coach, blessures et maladies (avec leurs notes), photos de progression (images
+comprises) et réglages sont **chiffrés sur ton téléphone** (XChaCha20-Poly1305, clé aléatoire de 256 bits propre à ton
+compte) avant d'être envoyés au service Vulkia, qui les stocke chez Cloudflare (D1 et R2) pour tes autres téléphones :
+tu les retrouves en te connectant à ton compte, sans code à retenir.
+
+La clé de ton compte est gardée par le service Vulkia, elle-même chiffrée (AES-256-GCM) par une clé secrète du
+service, distincte de la base de données ; elle n'est remise qu'à un téléphone connecté à ton compte. La base de
+données ne contient donc que des blocs chiffrés : une personne qui la volerait ne pourrait pas les lire. Ce n'est en
+revanche **pas** un chiffrement de bout en bout : l'éditeur, qui administre le service et sa clé secrète, a
+techniquement les moyens de déchiffrer ces données. Il s'interdit de le faire, sauf obligation légale. Le serveur voit
+aussi le nombre de blocs, leur taille et leurs dates d'envoi, rattachés à ton compte.
 
 La synchronisation fait partie du compte Vulkia : elle s'active d'elle-même quand tu crées ton compte ou t'y
 connectes, ce que l'écran de création du compte annonce avant que tu le fasses. Créer ou connecter ce compte est donc
 ton choix explicite, y compris pour tes informations de santé (blessures, maladies, photos) : base légale, ton
 consentement explicite (article 9.2.a du RGPD) et l'exécution du service demandé. Tu le retires à tout moment : la
 déconnexion du compte cesse les envois de ce téléphone, et *Supprimer mes données du serveur* efface les données
-chiffrées avec ton compte. *Réinitialiser la synchronisation* (code perdu) efface les données chiffrées du serveur
-puis repart de ce téléphone avec un nouveau code.
+synchronisées avec ton compte.
 
 ## Coach IA
 Quand tu utilises le coach IA (création de séance ou de programme, discussion), l'app envoie au service Vulkia ta
@@ -175,7 +177,7 @@ supprime-les d'abord depuis l'app.
 |---|---|
 | Compte (identifiants aléatoires, plateforme, dates, lien avec les comptes qui partagent ton abonnement) | jusqu'à ce que tu le supprimes depuis l'app |
 | Identifiants de connexion (adresse e-mail, identifiant Google, empreinte du mot de passe, dates) | jusqu'à ce que tu supprimes ton compte depuis l'app |
-| Données synchronisées (blocs chiffrés de bout en bout, clé enveloppée par ton code) | jusqu'à ce que tu réinitialises la synchronisation ou supprimes tes données du serveur |
+| Données synchronisées (blocs chiffrés sur ton téléphone, clé du compte gardée chiffrée par le service) | jusqu'à ce que tu supprimes tes données du serveur |
 | État de ton abonnement | jusqu'à la suppression |
 | Trace du compte supprimé d'un appareil qui détenait un abonnement partagé (identifiant opaque, dates de création et de suppression, lien avec le groupe, état de l'abonnement) | jusqu'à 30 jours après la fin de cet abonnement |
 | Compteurs du jour (coach, conseil, statistiques) | 8 jours |
@@ -204,7 +206,7 @@ supprime-les d'abord depuis l'app.
 
 | Prestataire | Rôle | Données | Pays |
 |---|---|---|---|
-| Cloudflare, Inc. (Workers, D1, R2, Workers AI) | héberge le service Vulkia et exécute les modèles d'IA | demandes au coach et au conseil, compte, compteurs, journal technique ; données synchronisées, chiffrées de bout en bout (illisibles pour lui) | États-Unis (réseau mondial) |
+| Cloudflare, Inc. (Workers, D1, R2, Workers AI) | héberge le service Vulkia et exécute les modèles d'IA | demandes au coach et au conseil, compte, compteurs, journal technique ; données synchronisées, chiffrées (illisibles pour lui sans la clé secrète du service) | États-Unis (réseau mondial) |
 | RevenueCat, Inc. | gestion des abonnements | identifiant du compte, historique des achats dans l'app | États-Unis |
 | Google Play, Apple App Store | paiement et facturation, sous leur propre responsabilité | selon leurs propres politiques (ton compte Google ou Apple) | — |
 | Google (connexion avec Google, si tu la choisis) | confirme ton identité, sous sa propre responsabilité ([règles de confidentialité de Google](https://policies.google.com/privacy)) | il transmet à Vulkia l'identifiant de ton compte Google et ton adresse e-mail | — |
