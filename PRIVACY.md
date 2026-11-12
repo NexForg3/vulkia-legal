@@ -1,6 +1,6 @@
 # Politique de confidentialité — Vulkia
 
-*Dernière mise à jour : 12 novembre 2026 (mot de passe oublié, validation en deux étapes)*
+*Dernière mise à jour : 12 novembre 2026 (données reçues de Google, mot de passe oublié, validation en deux étapes)*
 
 Vulkia est une application de suivi de musculation. Ton carnet d'entraînement fonctionne **sans compte** : tes données
 restent sur ton téléphone. Le coach IA et l'abonnement **Vulkia Premium** passent par le **service Vulkia**, hébergé
@@ -60,6 +60,31 @@ l'adresse ni l'adresse IP en clair), effacée au bout d'un à deux jours. Se dé
 téléphone reprend alors un compte pseudonyme, avec les mêmes compteurs d'utilisation du coach IA. Supprimer tes données
 du serveur efface aussi tes identifiants de connexion. L'éditeur peut offrir l'accès Premium à certains comptes
 (éditeur, testeurs) d'après leur adresse e-mail vérifiée par Google ou leur identifiant de compte.
+
+## Données reçues de Google (« Continuer avec Google »)
+Cette section décrit l'usage des données que Vulkia reçoit des services d'API Google quand tu choisis de te connecter
+avec ton compte Google.
+- **Données consultées** : l'**identifiant de ton compte Google**, ton **adresse e-mail** et l'information que Google
+  l'a vérifiée (champs d'application `openid` et `email`). Le jeton d'identité remis par Google peut aussi contenir ton
+  nom et ta photo de profil : Vulkia ne les lit pas et ne les enregistre pas. Vulkia ne demande accès ni à ton Gmail,
+  ni à ton Drive, ni à tes contacts, ni à ton agenda, ni à aucune autre donnée de ton compte Google, et ne reçoit
+  jamais ton mot de passe Google.
+- **Utilisation** : uniquement pour créer ton compte Vulkia et t'y connecter, retrouver sur un autre téléphone ton
+  abonnement, ton quota du coach IA et tes données synchronisées, t'identifier si tu nous écris, et, pour une adresse
+  vérifiée figurant sur la liste de l'éditeur (éditeur, testeurs), offrir l'accès Premium. Ces données ne servent
+  **jamais** à la publicité, au profilage, à l'entraînement de modèles d'IA ni à aucun autre usage.
+- **Partage** : ces données ne sont **ni vendues, ni louées, ni partagées** avec des tiers, hormis l'hébergeur du service
+  Vulkia (Cloudflare, sous-traitant, qui les stocke pour l'éditeur) et les cas où la loi l'impose.
+- **Stockage et protection** : sur le serveur Vulkia chez Cloudflare (base D1), transmises uniquement par des
+  connexions chiffrées (HTTPS) et des requêtes signées par l'app ; accès réservé à l'éditeur.
+- **Conservation et suppression** : jusqu'à ce que tu supprimes ton compte depuis l'app (*Réglages → Abonnement →
+  Supprimer mes données du serveur*) ou que tu le demandes à **NexForg3@gmail.com** (réponse sous un mois). Tu peux
+  aussi retirer à tout moment l'accès de Vulkia à ton compte Google sur
+  [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
+- **Utilisation limitée** : l'utilisation et le transfert vers toute autre application des informations reçues des API
+  Google par Vulkia respectent les [Règles relatives aux données utilisateur des services d'API
+  Google](https://developers.google.com/terms/api-services-user-data-policy?hl=fr), y compris les exigences
+  d'utilisation limitée.
 
 ## Synchronisation chiffrée (avec un compte)
 Avec un compte Vulkia relié à Google ou à ton e-mail, tes séances, routines et dossiers, salles, mensurations, exercices
@@ -145,7 +170,7 @@ d'événements acceptés par jour (compteur gardé 8 jours).
 
 ## Supprimer tes données du serveur
 *Réglages → Abonnement → Supprimer mes données du serveur* efface du serveur ton compte (ses identifiants, la
-plateforme, les dates, ton adresse e-mail, l'identifiant Google et l'empreinte du mot de passe s'il y en a), l'état de ton abonnement enregistré par Vulkia et le journal technique de tes demandes
+plateforme, les dates, ton adresse e-mail, l'identifiant Google et l'empreinte du mot de passe s'il y en a), tes données synchronisées (chiffrées) et la clé de ton compte, tes réglages de validation en deux étapes et tes codes en cours, l'état de ton abonnement enregistré par Vulkia et le journal technique de tes demandes
 terminées : celles faites avec ce compte (y compris celles comptées sur le compte que partagent tes appareils) et
 celles faites par ton installation sans compte. **Cela ne résilie pas ton abonnement** : gère-le dans Google Play ou
 l'App Store ; s'il est en cours, l'app le rattache à ton nouveau compte.
@@ -283,24 +308,27 @@ The French version above prevails.
 simplified joint-stock company (SASU) being registered, reachable at **NexForg3@gmail.com**.
 
 **On your device.** Your training log works **without an account**: workouts, routines, gyms, measurements, custom
-exercises, settings and coach conversations are stored **on your device**, and nowhere else unless you turn on
-*Encrypted sync*; export or delete them anytime from *Settings → Data*. Injuries and illnesses you declare (zone, type,
+exercises, settings and coach conversations are stored **on your device**, and nowhere else unless you have a Vulkia
+account (then they go through *Encrypted sync*, below); export or delete them anytime from *Settings → Data*. Injuries and illnesses you declare (zone, type,
 pain, symptoms, temperature, notes) are only used to adapt your workouts on the device: they **stay on your phone**,
 are never sent in readable form to a server nor to Health Connect / Apple Health, and are only included in your own
-backups and, if you turn it on, in the encrypted sync that only you can read; a summary without your notes goes with your AI coach
+backups and, with a Vulkia account, in the encrypted sync where they are only stored encrypted; a summary without your notes goes with your AI coach
 requests **only with your explicit consent**. Vulkia adapts your training; it does not replace medical advice.
 
-**Encrypted sync (optional).** If you turn it on (*Settings → Encrypted sync*, with a Vulkia account linked to Google or
-to your email), your workouts, routines and folders, gyms, measurements, custom exercises, coach conversations, injuries
-and illnesses (with their notes), progress photos (images included) and settings are **encrypted on your phone**
-(XChaCha20-Poly1305, random 256-bit key) before being sent to the Vulkia service, which stores them at Cloudflare (D1,
-R2) for your other phones. It is **end-to-end** encryption: the key only leaves your phones wrapped by your **recovery
-code**, which Vulkia never receives. Neither the publisher, nor Cloudflare, nor someone who stole the database can read
-this data; the server only sees encrypted blocks, their number, size and upload dates, linked to your account. Without
-your code, the publisher cannot recover it for you. Turning it on is your explicit choice, health information
-included (explicit consent, GDPR art. 9(2)(a), and performance of the requested service); "Stop on this phone" stops
-this phone's uploads, "Reset sync" erases the encrypted data from the server (so does deleting your server data). Kept
-until you reset sync or delete your server data.
+**Encrypted sync (with an account).** With a Vulkia account linked to Google or to your email, your workouts, routines
+and folders, gyms, measurements, custom exercises, coach conversations, injuries and illnesses (with their notes),
+progress photos (images included) and settings are **encrypted on your phone** (XChaCha20-Poly1305, random 256-bit key
+of your account) before being sent to the Vulkia service, which stores them at Cloudflare (D1, R2) for your other
+phones: you get them back by signing in, with no code to remember. Your account's key is kept by the Vulkia service,
+itself encrypted (AES-256-GCM) by a secret key of the service kept apart from the database, and only given to a phone
+signed in to your account: the database only holds encrypted blocks that someone who stole it could not read. It is
+**not** end-to-end encryption: the publisher, who runs the service and its secret key, technically could decrypt
+this data; the publisher refrains from doing so, except where the law requires it. The server also sees the number,
+size and upload dates of the blocks, linked to your account. Sync is part of the Vulkia account and starts by itself
+when you create the account or sign in, which the account screen says before you do: creating or signing in to the
+account is your explicit choice, health information included (explicit consent, GDPR art. 9(2)(a), and performance of
+the requested service). You withdraw it anytime: signing out stops this phone's uploads, and *Delete my data from the
+server* erases the synced data with your account. Kept until you delete your server data.
 
 **Your pseudonymous account.** The AI coach and **Vulkia Premium** use the Vulkia service hosted by Cloudflare with a
 **pseudonymous account**: a random id bound to the random id of your installation (no name, no email, no phone
@@ -312,7 +340,11 @@ on another device, the link between the accounts that share it. Your IP address 
 **Vulkia account with email or Google.** A subscription needs a **Vulkia account linked to your Google account or to
 your email address**, so you find your subscription and AI quota again on another phone (optional for everything
 else). With your email, the server keeps your address and a **hash of your password** (PBKDF2-SHA256, random salt),
-never the password itself; no email is sent to you. With Google ("Continue with Google", Android), Google confirms your
+never the password itself. Vulkia sends you an email only when you ask for it: a 6-digit code to choose a new password
+(*Forgot your password*) or for two-step verification; these codes are only kept as a hash, 10 to 30 minutes.
+**Two-step verification** (optional, email sign-in): a code at each sign-in, sent by email or shown by your
+authenticator app; for the latter, the server keeps the key shared with the app, encrypted (AES-256-GCM), until you
+turn it off or delete your account. With Google ("Continue with Google", Android), Google confirms your
 identity and gives Vulkia your **Google account id**, your **email address** and whether it verified it — nothing else
 from your Google account. The server also keeps the creation and last sign-in dates, and counts **failed sign-ins** per
 hour under keyed hashes of the address tried and of the network (1 to 2 days). Signing out keeps the account; your
@@ -320,6 +352,23 @@ phone goes back to a pseudonymous account with the same AI usage counters. Delet
 erases your sign-in details (until then they are kept). The publisher may give Premium to some accounts (publisher,
 testers) from their Google-verified email address or account id. Legal basis: performance of the contract (failed
 sign-in counters: legitimate interest, abuse prevention). Google acts under its own privacy policy.
+
+**Google user data ("Continue with Google").** When you choose to sign in with Google, Vulkia receives from Google
+APIs only your **Google account id**, your **email address** and whether Google verified it (scopes `openid` and
+`email`). The identity token Google gives may also contain your name and profile picture: Vulkia neither reads nor
+stores them. Vulkia does not ask for access to your Gmail, Drive, contacts, calendar or any other data of your Google
+account, and never receives your Google password. This data is used **only** to create your Vulkia account and sign
+you in, to find your subscription, AI quota and synced data again on another phone, to identify you if you write to
+us, and to give Premium to a verified address on the publisher's list (publisher, testers); **never** for advertising,
+profiling, training AI models or any other purpose. It is **not sold, rented or shared** with third parties, except the
+host of the Vulkia service (Cloudflare, processor, storing it for the publisher) and where the law requires it. It is
+stored on the Vulkia server at Cloudflare (D1 database), only sent over encrypted connections (HTTPS) in requests signed
+by the app, and only the publisher can access it. It is kept until you delete your account in the app (*Settings →
+Subscription → Delete my data from the server*) or ask **NexForg3@gmail.com** (answer within one month); you can also
+remove Vulkia's access to your Google account anytime at
+[myaccount.google.com/permissions](https://myaccount.google.com/permissions). **Limited Use:** Vulkia's use and transfer
+to any other app of information received from Google APIs will adhere to the [Google API Services User Data
+Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
 
 **AI coach and replacement advice.** The AI coach sends your request and the needed context (training profile, workout
 summary, gym equipment; never your name) with your account; Workers AI neither stores nor trains on it. **Your health
@@ -351,7 +400,7 @@ refusals, first AI coach result, with the screen of origin from a fixed list): t
 event, screen, plan and platform, without any account or device id, for 400 days.
 
 **Deleting your data from the server.** *Settings → Subscription → Delete my data from the server* erases your
-account, the subscription state Vulkia stored and the technical log of your finished requests. It does not cancel the
+account (with your sign-in details, synced data and its key, two-step verification settings), the subscription state Vulkia stored and the technical log of your finished requests. It does not cancel the
 subscription (manage it in your store); an active subscription is attached to your next account by the app. Your AI
 coach usage counters are **not reset** (units used, AI cost, the discovery workout): otherwise deleting would be a way
 to get the discovery workout or the month's envelope again (legitimate interest: preventing abuse). They are kept
@@ -369,8 +418,10 @@ before the first request and withdrawable anytime in *Settings → Data → Priv
 installation, counters kept after a deletion), security of the service (signatures, technical log) and aggregate
 usage statistics. Consent, given and withdrawn in the system permissions: Health Connect / Apple Health.
 
-**Processors and transfers outside the EU.** Processors: Cloudflare, Inc. (hosting, AI models) and RevenueCat, Inc.
-(subscriptions), both established in the United States; Google Play and Apple handle payment under their own
+**Processors and transfers outside the EU.** Processors: Cloudflare, Inc. (hosting, AI models), RevenueCat, Inc.
+(subscriptions), both established in the United States, and the email service chosen by the publisher to send the
+codes (Gmail of Google LLC from the publisher's account, Brevo SAS in France, or Resend, Inc.: your email address and
+the code); Google Play and Apple handle payment under their own
 responsibility. **Transfers outside the EU** to these processors rely on the GDPR safeguards: Cloudflare is certified
 under the EU-U.S. Data Privacy Framework and its data processing addendum also includes the European Commission's
 standard contractual clauses; RevenueCat's data processing addendum relies on those standard contractual clauses. A
