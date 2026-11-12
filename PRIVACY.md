@@ -1,6 +1,6 @@
 # Politique de confidentialité — Vulkia
 
-*Dernière mise à jour : 12 novembre 2026*
+*Dernière mise à jour : 12 novembre 2026 (synchronisation chiffrée)*
 
 Vulkia est une application de suivi de musculation. Ton carnet d'entraînement fonctionne **sans compte** : tes données
 restent sur ton téléphone. Le coach IA et l'abonnement **Vulkia Premium** passent par le **service Vulkia**, hébergé
@@ -15,16 +15,18 @@ simplifiée unipersonnelle (SASU) en cours d'immatriculation, joignable à **Nex
 
 ## Données stockées sur ton téléphone
 Toutes tes données (séances, routines, salles de sport, mensurations, exercices personnalisés, réglages,
-conversations avec le coach) sont enregistrées **uniquement sur ton téléphone**. Tu peux les exporter (*Réglages →
+conversations avec le coach) sont enregistrées **sur ton téléphone**, et nulle part ailleurs tant que tu n'actives pas
+la *Synchronisation chiffrée* (voir plus bas). Tu peux les exporter (*Réglages →
 Données → Exporter une sauvegarde*) et les supprimer à tout moment (*Réglages → Données → Effacer toutes les données*,
 ou en désinstallant l'application). L'app y garde aussi le jeton de ton compte Vulkia (dans le stockage sécurisé du
 téléphone) et le dernier état connu de ton abonnement et de tes quotas, pour l'affichage.
 
 ## Blessures et maladies (Santé & blessures)
 Les blessures et maladies que tu déclares (zone, type, douleurs, symptômes, température, notes) servent uniquement à
-adapter tes séances sur l'appareil. Elles **restent sur ton téléphone** : elles ne sont envoyées à aucun serveur, ni
-à Health Connect / Apple Santé, et ne sont incluses que dans tes propres sauvegardes (export manuel, ou sauvegarde
-automatique dans le dossier que tu as choisi). Un résumé sans tes notes n'accompagne tes demandes au coach IA
+adapter tes séances sur l'appareil. Elles **restent sur ton téléphone** : elles ne sont envoyées ni à Health Connect /
+Apple Santé ni, en clair, à aucun serveur, et ne sont incluses que dans tes propres sauvegardes (export manuel, ou
+sauvegarde automatique dans le dossier que tu as choisi) et, si tu l'actives, dans la *Synchronisation chiffrée*, où
+personne d'autre que toi ne peut les lire. Un résumé sans tes notes n'accompagne tes demandes au coach IA
 **qu'avec ton accord explicite** (voir *Coach IA* ci-dessous). Vulkia adapte ton entraînement, il ne remplace pas un
 avis médical.
 
@@ -53,6 +55,23 @@ l'adresse ni l'adresse IP en clair), effacée au bout d'un à deux jours. Se dé
 téléphone reprend alors un compte pseudonyme, avec les mêmes compteurs d'utilisation du coach IA. Supprimer tes données
 du serveur efface aussi tes identifiants de connexion. L'éditeur peut offrir l'accès Premium à certains comptes
 (éditeur, testeurs) d'après leur adresse e-mail vérifiée par Google ou leur identifiant de compte.
+
+## Synchronisation chiffrée (facultative)
+Si tu l'actives (*Réglages → Synchronisation chiffrée*, avec un compte Vulkia relié à Google ou à ton e-mail), tes
+séances, routines et dossiers, salles, mensurations, exercices personnalisés, conversations avec le coach, blessures et
+maladies (avec leurs notes), photos de progression (images comprises) et réglages sont **chiffrés sur ton téléphone**
+(XChaCha20-Poly1305, clé aléatoire de 256 bits) avant d'être envoyés au service Vulkia, qui les stocke chez Cloudflare
+(D1 et R2) pour tes autres téléphones. C'est un chiffrement **de bout en bout** : la clé ne quitte tes téléphones
+qu'enveloppée par ton **code de récupération**, que Vulkia ne reçoit jamais. Ni l'éditeur, ni Cloudflare, ni une
+personne qui volerait la base de données ne peut lire ces données ; le serveur ne voit que des blocs chiffrés, leur
+nombre, leur taille et leurs dates d'envoi, rattachés à ton compte. Sans ton code, l'éditeur ne peut donc pas les
+récupérer pour toi.
+
+Activer la synchronisation est ton choix explicite, y compris pour tes informations de santé (blessures, maladies,
+photos) : base légale, ton consentement explicite (article 9.2.a du RGPD) et l'exécution du service demandé. Tu le
+retires à tout moment : *Arrêter sur ce téléphone* cesse les envois de ce téléphone, *Réinitialiser la
+synchronisation* efface les données chiffrées du serveur (et *Supprimer mes données du serveur* les efface avec ton
+compte).
 
 ## Coach IA
 Quand tu utilises le coach IA (création de séance ou de programme, discussion), l'app envoie au service Vulkia ta
@@ -154,6 +173,7 @@ supprime-les d'abord depuis l'app.
 |---|---|
 | Compte (identifiants aléatoires, plateforme, dates, lien avec les comptes qui partagent ton abonnement) | jusqu'à ce que tu le supprimes depuis l'app |
 | Identifiants de connexion (adresse e-mail, identifiant Google, empreinte du mot de passe, dates) | jusqu'à ce que tu supprimes ton compte depuis l'app |
+| Données synchronisées (blocs chiffrés de bout en bout, clé enveloppée par ton code) | jusqu'à ce que tu réinitialises la synchronisation ou supprimes tes données du serveur |
 | État de ton abonnement | jusqu'à la suppression |
 | Trace du compte supprimé d'un appareil qui détenait un abonnement partagé (identifiant opaque, dates de création et de suppression, lien avec le groupe, état de l'abonnement) | jusqu'à 30 jours après la fin de cet abonnement |
 | Compteurs du jour (coach, conseil, statistiques) | 8 jours |
@@ -182,7 +202,7 @@ supprime-les d'abord depuis l'app.
 
 | Prestataire | Rôle | Données | Pays |
 |---|---|---|---|
-| Cloudflare, Inc. (Workers, D1, Workers AI) | héberge le service Vulkia et exécute les modèles d'IA | demandes au coach et au conseil, compte, compteurs, journal technique | États-Unis (réseau mondial) |
+| Cloudflare, Inc. (Workers, D1, R2, Workers AI) | héberge le service Vulkia et exécute les modèles d'IA | demandes au coach et au conseil, compte, compteurs, journal technique ; données synchronisées, chiffrées de bout en bout (illisibles pour lui) | États-Unis (réseau mondial) |
 | RevenueCat, Inc. | gestion des abonnements | identifiant du compte, historique des achats dans l'app | États-Unis |
 | Google Play, Apple App Store | paiement et facturation, sous leur propre responsabilité | selon leurs propres politiques (ton compte Google ou Apple) | — |
 | Google (connexion avec Google, si tu la choisis) | confirme ton identité, sous sa propre responsabilité ([règles de confidentialité de Google](https://policies.google.com/privacy)) | il transmet à Vulkia l'identifiant de ton compte Google et ton adresse e-mail | — |
@@ -251,11 +271,24 @@ The French version above prevails.
 simplified joint-stock company (SASU) being registered, reachable at **NexForg3@gmail.com**.
 
 **On your device.** Your training log works **without an account**: workouts, routines, gyms, measurements, custom
-exercises, settings and coach conversations are stored **only on your device**; export or delete them anytime from
-*Settings → Data*. Injuries and illnesses you declare (zone, type, pain, symptoms, temperature, notes) are only used to
-adapt your workouts on the device: they **stay on your phone**, are never sent to a server nor to Health Connect /
-Apple Health, and are only included in your own backups; a summary without your notes goes with your AI coach
+exercises, settings and coach conversations are stored **on your device**, and nowhere else unless you turn on
+*Encrypted sync*; export or delete them anytime from *Settings → Data*. Injuries and illnesses you declare (zone, type,
+pain, symptoms, temperature, notes) are only used to adapt your workouts on the device: they **stay on your phone**,
+are never sent in readable form to a server nor to Health Connect / Apple Health, and are only included in your own
+backups and, if you turn it on, in the encrypted sync that only you can read; a summary without your notes goes with your AI coach
 requests **only with your explicit consent**. Vulkia adapts your training; it does not replace medical advice.
+
+**Encrypted sync (optional).** If you turn it on (*Settings → Encrypted sync*, with a Vulkia account linked to Google or
+to your email), your workouts, routines and folders, gyms, measurements, custom exercises, coach conversations, injuries
+and illnesses (with their notes), progress photos (images included) and settings are **encrypted on your phone**
+(XChaCha20-Poly1305, random 256-bit key) before being sent to the Vulkia service, which stores them at Cloudflare (D1,
+R2) for your other phones. It is **end-to-end** encryption: the key only leaves your phones wrapped by your **recovery
+code**, which Vulkia never receives. Neither the publisher, nor Cloudflare, nor someone who stole the database can read
+this data; the server only sees encrypted blocks, their number, size and upload dates, linked to your account. Without
+your code, the publisher cannot recover it for you. Turning it on is your explicit choice, health information
+included (explicit consent, GDPR art. 9(2)(a), and performance of the requested service); "Stop on this phone" stops
+this phone's uploads, "Reset sync" erases the encrypted data from the server (so does deleting your server data). Kept
+until you reset sync or delete your server data.
 
 **Your pseudonymous account.** The AI coach and **Vulkia Premium** use the Vulkia service hosted by Cloudflare with a
 **pseudonymous account**: a random id bound to the random id of your installation (no name, no email, no phone
