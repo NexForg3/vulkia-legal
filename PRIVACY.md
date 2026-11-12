@@ -72,13 +72,19 @@ avec ton compte Google.
 - **Utilisation** : uniquement pour créer ton compte Vulkia et t'y connecter, retrouver sur un autre téléphone ton
   abonnement, ton quota du coach IA et tes données synchronisées, t'identifier si tu nous écris, et, pour une adresse
   vérifiée figurant sur la liste de l'éditeur (éditeur, testeurs), offrir l'accès Premium. Ces données ne servent
-  **jamais** à la publicité, au profilage, à l'entraînement de modèles d'IA ni à aucun autre usage.
-- **Partage** : ces données ne sont **ni vendues, ni louées, ni partagées** avec des tiers, hormis l'hébergeur du service
-  Vulkia (Cloudflare, sous-traitant, qui les stocke pour l'éditeur) et les cas où la loi l'impose.
-- **Stockage et protection** : sur le serveur Vulkia chez Cloudflare (base D1), transmises uniquement par des
-  connexions chiffrées (HTTPS) et des requêtes signées par l'app ; accès réservé à l'éditeur.
-- **Conservation et suppression** : jusqu'à ce que tu supprimes ton compte depuis l'app (*Réglages → Abonnement →
-  Supprimer mes données du serveur*) ou que tu le demandes à **NexForg3@gmail.com** (réponse sous un mois). Tu peux
+  **jamais** à la publicité (ciblée, personnalisée, de reciblage ou par centres d'intérêt), au profilage, à la
+  constitution de bases de données, à l'évaluation de la solvabilité ou à des fins de prêt, ni à développer, améliorer
+  ou entraîner des modèles d'IA ou d'apprentissage automatique.
+- **Partage** : ces données ne sont **ni vendues, ni louées, ni partagées**, ni transmises à des courtiers en données ou à
+  des revendeurs d'informations ; seuls y accèdent l'hébergeur du service Vulkia (Cloudflare, sous-traitant, qui les
+  stocke pour l'éditeur) et, si la loi l'impose, les autorités compétentes.
+- **Stockage et protection** : sur le serveur Vulkia chez Cloudflare (base D1, chiffrée au repos par l'hébergeur),
+  transmises uniquement par des connexions chiffrées (HTTPS) et des requêtes signées par l'app ; des procédures de
+  sécurité protègent leur confidentialité (accès réservé à l'éditeur, secrets du service séparés de la base, limitation
+  des tentatives de connexion).
+- **Conservation et suppression** : tant que ton compte existe, pour te permettre de t'y connecter ; elles sont
+  effacées dès que tu supprimes ton compte depuis l'app (*Réglages → Abonnement → Supprimer mes données du serveur*) ou
+  dans le mois qui suit ta demande à **NexForg3@gmail.com**. Tu peux
   aussi retirer à tout moment l'accès de Vulkia à ton compte Google sur
   [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
 - **Utilisation limitée** : l'utilisation et le transfert vers toute autre application des informations reçues des API
@@ -359,12 +365,16 @@ APIs only your **Google account id**, your **email address** and whether Google 
 stores them. Vulkia does not ask for access to your Gmail, Drive, contacts, calendar or any other data of your Google
 account, and never receives your Google password. This data is used **only** to create your Vulkia account and sign
 you in, to find your subscription, AI quota and synced data again on another phone, to identify you if you write to
-us, and to give Premium to a verified address on the publisher's list (publisher, testers); **never** for advertising,
-profiling, training AI models or any other purpose. It is **not sold, rented or shared** with third parties, except the
-host of the Vulkia service (Cloudflare, processor, storing it for the publisher) and where the law requires it. It is
-stored on the Vulkia server at Cloudflare (D1 database), only sent over encrypted connections (HTTPS) in requests signed
-by the app, and only the publisher can access it. It is kept until you delete your account in the app (*Settings →
-Subscription → Delete my data from the server*) or ask **NexForg3@gmail.com** (answer within one month); you can also
+us, and to give Premium to a verified address on the publisher's list (publisher, testers); **never** for advertising
+(targeted, personalized, retargeted or interest-based), profiling, creating databases, determining credit-worthiness or
+lending, nor to develop, improve or train AI or machine-learning models. It is **not sold, rented or shared**, nor
+given to data brokers or information resellers; only the host of the Vulkia service (Cloudflare, processor, storing it
+for the publisher) accesses it and, where the law requires it, the competent authorities. It is stored on the Vulkia
+server at Cloudflare (D1 database, encrypted at rest by the host), only sent over encrypted connections (HTTPS) in
+requests signed by the app; security procedures protect its confidentiality (access restricted to the publisher,
+service secrets kept apart from the database, limits on sign-in attempts). It is kept as long as your account exists,
+to let you sign in, and erased as soon as you delete your account in the app (*Settings → Subscription → Delete my
+data from the server*) or within a month of your request to **NexForg3@gmail.com**; you can also
 remove Vulkia's access to your Google account anytime at
 [myaccount.google.com/permissions](https://myaccount.google.com/permissions). **Limited Use:** Vulkia's use and transfer
 to any other app of information received from Google APIs will adhere to the [Google API Services User Data
