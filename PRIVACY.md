@@ -1,6 +1,6 @@
 # Politique de confidentialité — Vulkia
 
-*Dernière mise à jour : 12 novembre 2026 (synchronisation chiffrée liée au compte)*
+*Dernière mise à jour : 12 novembre 2026 (mot de passe oublié, validation en deux étapes)*
 
 Vulkia est une application de suivi de musculation. Ton carnet d'entraînement fonctionne **sans compte** : tes données
 restent sur ton téléphone. Le coach IA et l'abonnement **Vulkia Premium** passent par le **service Vulkia**, hébergé
@@ -44,7 +44,12 @@ créés depuis un même réseau.
 Un abonnement demande un **compte Vulkia relié à ton compte Google ou à ton e-mail** : tu retrouves ainsi ton
 abonnement et ton quota du coach IA sur un autre téléphone. C'est facultatif pour tout le reste de l'app.
 - **Avec ton e-mail** : le serveur garde ton adresse e-mail et une **empreinte de ton mot de passe** (PBKDF2-SHA256,
-  avec un sel aléatoire) — jamais le mot de passe lui-même. Aucun e-mail ne t'est envoyé.
+  avec un sel aléatoire) — jamais le mot de passe lui-même. Vulkia t'envoie un e-mail seulement quand tu le demandes :
+  un code à 6 chiffres pour choisir un nouveau mot de passe (*Mot de passe oublié*) ou pour la validation en deux
+  étapes. Ces codes ne sont gardés que sous forme d'empreinte, 10 à 30 minutes.
+- **Validation en deux étapes** (facultative, connexion par e-mail) : un code à chaque connexion, envoyé par e-mail ou
+  affiché par ton application d'authentification. Pour cette dernière, le serveur garde la clé partagée avec
+  l'application, chiffrée (AES-256-GCM).
 - **Avec Google** (« Continuer avec Google », Android) : Google confirme ton identité à Vulkia et lui transmet
   l'**identifiant de ton compte Google**, ton **adresse e-mail** et le fait qu'il l'a vérifiée. Vulkia ne reçoit ni ton
   mot de passe Google, ni tes contacts, ni rien d'autre de ton compte Google.
@@ -187,6 +192,8 @@ supprime-les d'abord depuis l'app.
 | Copie d'une séance ou d'un programme générés | servie 15 minutes, puis effacée (au plus tard au nettoyage quotidien) |
 | Empreinte d'adresse IP (création de comptes) | 2 jours |
 | Compteurs d'échecs de connexion (empreintes de l'adresse essayée et du réseau) | 1 à 2 jours |
+| Codes envoyés par e-mail (empreinte seulement) | 10 à 30 minutes, effacés au plus tard le lendemain |
+| Réglage de la validation en deux étapes (méthode, clé de l'application d'authentification chiffrée) | jusqu'à ce que tu la désactives ou supprimes ton compte |
 | Journal des notifications d'abonnement | 90 jours |
 | Compteurs quotidiens du conseil de remplacement | 7 jours |
 | Réponses du conseil en cache (sans identifiant) | 60 jours |
@@ -209,6 +216,7 @@ supprime-les d'abord depuis l'app.
 | Cloudflare, Inc. (Workers, D1, R2, Workers AI) | héberge le service Vulkia et exécute les modèles d'IA | demandes au coach et au conseil, compte, compteurs, journal technique ; données synchronisées, chiffrées (illisibles pour lui sans la clé secrète du service) | États-Unis (réseau mondial) |
 | RevenueCat, Inc. | gestion des abonnements | identifiant du compte, historique des achats dans l'app | États-Unis |
 | Google Play, Apple App Store | paiement et facturation, sous leur propre responsabilité | selon leurs propres politiques (ton compte Google ou Apple) | — |
+| Service d'envoi d'e-mails choisi par l'éditeur (Brevo SAS, France, ou Resend, Inc., États-Unis) | envoie les codes de réinitialisation et de validation | ton adresse e-mail et le code envoyé | Union européenne (Brevo) ou États-Unis (Resend) |
 | Google (connexion avec Google, si tu la choisis) | confirme ton identité, sous sa propre responsabilité ([règles de confidentialité de Google](https://policies.google.com/privacy)) | il transmet à Vulkia l'identifiant de ton compte Google et ton adresse e-mail | — |
 
 Si d'autres prestataires d'IA étaient utilisés, cette politique serait mise à jour avant.
