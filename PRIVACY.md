@@ -1,6 +1,6 @@
 # Politique de confidentialité — Vulkia
 
-*Dernière mise à jour : 12 novembre 2026 (données reçues de Google, mot de passe oublié, validation en deux étapes)*
+*Dernière mise à jour : 12 novembre 2026 (adresse confirmée par un lien à la création du compte, lien de mot de passe oublié)*
 
 Vulkia est une application de suivi de musculation. Ton carnet d'entraînement fonctionne **sans compte** : tes données
 restent sur ton téléphone. Le coach IA et l'abonnement **Vulkia Premium** passent par le **service Vulkia**, hébergé
@@ -45,8 +45,12 @@ Un abonnement demande un **compte Vulkia relié à ton compte Google ou à ton e
 abonnement et ton quota du coach IA sur un autre téléphone. C'est facultatif pour tout le reste de l'app.
 - **Avec ton e-mail** : le serveur garde ton adresse e-mail et une **empreinte de ton mot de passe** (PBKDF2-SHA256,
   avec un sel aléatoire) — jamais le mot de passe lui-même. Vulkia t'envoie un e-mail seulement quand tu le demandes :
-  un code à 6 chiffres pour choisir un nouveau mot de passe (*Mot de passe oublié*) ou pour la validation en deux
-  étapes. Ces codes ne sont gardés que sous forme d'empreinte, 10 à 30 minutes.
+  un **lien** pour confirmer ton adresse à la création du compte (le compte n'existe qu'une fois le lien ouvert et ton
+  mot de passe choisi ; sinon l'adresse n'est gardée que 24 heures, le temps de la validité du lien), un lien pour
+  choisir un nouveau mot de passe (*Mot de passe oublié*, 30 minutes) ou un code à 6 chiffres pour la validation en
+  deux étapes (10 à 15 minutes). Liens et codes ne sont gardés que sous forme d'empreinte et ne servent qu'une fois. Le
+  lien passe par une page de nexforg3.fr qui ouvre l'app : la partie du lien qui le rend unique n'est jamais envoyée au
+  serveur du site.
 - **Validation en deux étapes** (facultative, connexion par e-mail) : un code à chaque connexion, envoyé par e-mail ou
   affiché par ton application d'authentification. Pour cette dernière, le serveur garde la clé partagée avec
   l'application, chiffrée (AES-256-GCM).
@@ -346,8 +350,12 @@ on another device, the link between the accounts that share it. Your IP address 
 **Vulkia account with email or Google.** A subscription needs a **Vulkia account linked to your Google account or to
 your email address**, so you find your subscription and AI quota again on another phone (optional for everything
 else). With your email, the server keeps your address and a **hash of your password** (PBKDF2-SHA256, random salt),
-never the password itself. Vulkia sends you an email only when you ask for it: a 6-digit code to choose a new password
-(*Forgot your password*) or for two-step verification; these codes are only kept as a hash, 10 to 30 minutes.
+never the password itself. Vulkia sends you an email only when you ask for it: a **link** to confirm your address when
+you create the account (the account exists only once the link is opened and your password chosen; otherwise the address
+is kept only 24 hours, while the link is valid), a link to choose a new password (*Forgot your password*, 30 minutes) or
+a 6-digit code for two-step verification (10 to 15 minutes); links and codes are only kept as a hash and work once. The
+link goes through a nexforg3.fr page that opens the app: the part of the link that makes it unique is never sent to the
+site's server.
 **Two-step verification** (optional, email sign-in): a code at each sign-in, sent by email or shown by your
 authenticator app; for the latter, the server keeps the key shared with the app, encrypted (AES-256-GCM), until you
 turn it off or delete your account. With Google ("Continue with Google", Android), Google confirms your
