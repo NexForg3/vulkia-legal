@@ -1,6 +1,6 @@
 # Politique de confidentialité — Vulkia
 
-*Dernière mise à jour : 12 novembre 2026 (adresse confirmée par un lien à la création du compte, lien de mot de passe oublié)*
+*Dernière mise à jour : 13 novembre 2026 (adresse confirmée par un lien à la création du compte, lien de mot de passe oublié, suppression des données depuis Moi → Vulkia Premium)*
 
 Vulkia est une application de suivi de musculation. Ton carnet d'entraînement fonctionne **sans compte** : tes données
 restent sur ton téléphone. Le coach IA et l'abonnement **Vulkia Premium** passent par le **service Vulkia**, hébergé
@@ -87,7 +87,7 @@ avec ton compte Google.
   sécurité protègent leur confidentialité (accès réservé à l'éditeur, secrets du service séparés de la base, limitation
   des tentatives de connexion).
 - **Conservation et suppression** : tant que ton compte existe, pour te permettre de t'y connecter ; elles sont
-  effacées dès que tu supprimes ton compte depuis l'app (*Réglages → Abonnement → Supprimer mes données du serveur*) ou
+  effacées dès que tu supprimes ton compte depuis l'app (*Moi → Vulkia Premium → Supprimer mes données du serveur*) ou
   dans le mois qui suit ta demande à **NexForg3@gmail.com**. Tu peux
   aussi retirer à tout moment l'accès de Vulkia à ton compte Google sur
   [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
@@ -179,7 +179,7 @@ d'appareil et sans texte, pendant 400 jours. L'identifiant de l'installation ser
 d'événements acceptés par jour (compteur gardé 8 jours).
 
 ## Supprimer tes données du serveur
-*Réglages → Abonnement → Supprimer mes données du serveur* efface du serveur ton compte (ses identifiants, la
+*Moi → Vulkia Premium → Supprimer mes données du serveur* efface du serveur ton compte (ses identifiants, la
 plateforme, les dates, ton adresse e-mail, l'identifiant Google et l'empreinte du mot de passe s'il y en a), tes données synchronisées (chiffrées) et la clé de ton compte, tes réglages de validation en deux étapes et tes codes en cours, l'état de ton abonnement enregistré par Vulkia et le journal technique de tes demandes
 terminées : celles faites avec ce compte (y compris celles comptées sur le compte que partagent tes appareils) et
 celles faites par ton installation sans compte. **Cela ne résilie pas ton abonnement** : gère-le dans Google Play ou
@@ -298,7 +298,7 @@ données et d'opposition aux traitements fondés sur l'intérêt légitime ; tu 
 consentement donné (le partage de ta santé avec le coach IA dans *Réglages → Données → Confidentialité*, les
 autorisations Health Connect / Apple Santé) et définir des directives sur le sort
 de tes données après ton décès. L'essentiel se fait depuis l'app : exporter ou effacer les données du téléphone
-(*Réglages → Données*), supprimer tes données du serveur (*Réglages → Abonnement*). Pour toute autre demande, contacte
+(*Réglages → Données*), supprimer tes données du serveur (*Moi → Vulkia Premium*). Pour toute autre demande, contacte
 l'éditeur (voir *Contact*) : sans compte relié à ton e-mail ou à Google, Vulkia ne connaît ni ton nom ni ton e-mail et
 le serveur ne peut retrouver tes données qu'à partir de ton appareil ; l'éditeur te répond dans un délai d'un mois et t'indique comment relier ta
 demande à ton compte, sans te demander plus que nécessaire. Tu peux aussi adresser une réclamation à la CNIL (www.cnil.fr) ou à l'autorité de
@@ -381,7 +381,7 @@ for the publisher) accesses it and, where the law requires it, the competent aut
 server at Cloudflare (D1 database, encrypted at rest by the host), only sent over encrypted connections (HTTPS) in
 requests signed by the app; security procedures protect its confidentiality (access restricted to the publisher,
 service secrets kept apart from the database, limits on sign-in attempts). It is kept as long as your account exists,
-to let you sign in, and erased as soon as you delete your account in the app (*Settings → Subscription → Delete my
+to let you sign in, and erased as soon as you delete your account in the app (*Me → Vulkia Premium → Delete my
 data from the server*) or within a month of your request to **NexForg3@gmail.com**; you can also
 remove Vulkia's access to your Google account anytime at
 [myaccount.google.com/permissions](https://myaccount.google.com/permissions). **Limited Use:** Vulkia's use and transfer
@@ -417,7 +417,7 @@ Premium stays active on each of those devices, with the same quotas.
 refusals, first AI coach result, with the screen of origin from a fixed list): the server only keeps daily totals per
 event, screen, plan and platform, without any account or device id, for 400 days.
 
-**Deleting your data from the server.** *Settings → Subscription → Delete my data from the server* erases your
+**Deleting your data from the server.** *Me → Vulkia Premium → Delete my data from the server* erases your
 account (with your sign-in details, synced data and its key, two-step verification settings), the subscription state Vulkia stored and the technical log of your finished requests. It does not cancel the
 subscription (manage it in your store); an active subscription is attached to your next account by the app. Your AI
 coach usage counters are **not reset** (units used, AI cost, the discovery workout): otherwise deleting would be a way

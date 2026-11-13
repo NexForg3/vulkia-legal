@@ -28,7 +28,7 @@ pseudonyme** (un identifiant aléatoire), propre à l'installation sur ton appar
 Si tu réinstalles l'application ou changes de téléphone, un nouveau compte peut être créé : **« Restaurer mes
 achats »** y rattache ton abonnement en cours. Les appareils qui ont restauré le même abonnement partagent alors un
 même compte : Premium y est actif sur chacun, avec une seule enveloppe d'unités et un seul plafond de coût.
-Supprimer tes données du serveur (*Réglages → Abonnement*) ne remet pas tes quotas à zéro : les unités déjà utilisées
+Supprimer tes données du serveur (*Moi → Vulkia Premium*) ne remet pas tes quotas à zéro : les unités déjà utilisées
 restent décomptées pour le prochain compte de cette installation.
 
 ## 5. Offre gratuite et Vulkia Premium
@@ -61,7 +61,7 @@ restent décomptées pour le prochain compte de cette installation.
 
 ## 7. Résiliation
 Tu résilies à tout moment **dans la boutique** : Google Play (*Paiements et abonnements → Abonnements*) ou l'App Store
-(réglages de ton compte Apple → *Abonnements*), ou depuis l'application (*Réglages → Abonnement → Gérer
+(réglages de ton compte Apple → *Abonnements*), ou depuis l'application (*Moi → Vulkia Premium → Gérer
 l'abonnement*). L'accès Premium reste ouvert jusqu'à la fin de la période déjà payée. Désinstaller l'application ou
 supprimer tes données du serveur **ne résilie pas** l'abonnement.
 
@@ -100,7 +100,7 @@ au moins 24 heures avant sa fin.
 
 ## 12. Données personnelles
 Le traitement de tes données est décrit dans la [politique de confidentialité](PRIVACY.md). Tu peux supprimer tes
-données du serveur depuis *Réglages → Abonnement*.
+données du serveur depuis *Moi → Vulkia Premium*.
 
 ## 13. Propriété intellectuelle et licences
 Le nom et le logo « Vulkia » appartiennent à l'éditeur ; ils ne peuvent pas être reproduits sans son autorisation.
@@ -145,7 +145,7 @@ every month, annual plan included) and detailed analyses; each answer the AI del
 automatic repair does not; what was generated stays yours. Subscriptions are bought and billed through **Google Play**
 or the **App Store**; the annual plan may include a 7-day free trial for eligible users. **Subscriptions renew
 automatically unless cancelled at least 24 hours before the end of the current period (or of the trial)**; cancel in
-your store account (or *Settings → Subscription → Manage subscription*); access lasts until the end of the paid
+your store account (or *Me → Vulkia Premium → Manage subscription*); access lasts until the end of the paid
 period; refunds are handled by the store. The AI coach is **not medical advice**: generated content may contain
 errors; stop an exercise in case of pain and see a health professional when needed; your health information is only
 sent to it with your explicit consent (*Settings → Data → Privacy*). Fair use: quotas and a technical
